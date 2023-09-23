@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities.Models;
 
-public class Genres
+public class Genre
 {
     [Column("GenreId")]
     public Guid Id { get; set; }

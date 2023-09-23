@@ -4,10 +4,10 @@ namespace Entities.Models;
 
 public class BookGenres
 {
-    [ForeignKey(nameof(Books))] 
+    [ForeignKey(nameof(Book))] 
     public Guid BookId;
 
-    [ForeignKey(nameof(Genres))] 
+    [ForeignKey(nameof(Genre))] 
     public Guid GenreId;
 
 }
