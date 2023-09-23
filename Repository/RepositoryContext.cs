@@ -15,6 +15,7 @@ public class RepositoryContext : DbContext
     public DbSet<Book>? Book { get; set; }
     public DbSet<BookAuthor>? BookAuthor { get; set; }
     public DbSet<Publisher>? Publisher { get; set; }
+    public DbSet<Genre>? Genre { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -22,5 +23,6 @@ public class RepositoryContext : DbContext
         modelBuilder.ApplyConfiguration(new BookTypeConfiguration());
         modelBuilder.ApplyConfiguration(new BookAuthorTypeConfiguration());
         modelBuilder.ApplyConfiguration(new PublisherTypeConfiguration());
+        modelBuilder.ApplyConfiguration(new GenreTypeConfiguration());
     }
 }
