@@ -8,9 +8,9 @@ public class BookTypeConfiguration : IEntityTypeConfiguration<Book>
 {
     public void Configure(EntityTypeBuilder<Book> builder)
     {
-        builder.HasKey(b => b.Id);
+        builder.HasKey(b => b.BookId);
         
-        builder.Property(b => b.Id).ValueGeneratedOnAdd();
+        builder.Property(b => b.BookId).ValueGeneratedOnAdd();
 
         builder.Property(b => b.BookTitle).IsRequired().HasMaxLength(20);
 
@@ -29,9 +29,6 @@ public class BookTypeConfiguration : IEntityTypeConfiguration<Book>
         builder.Property(b => b.CoverImageURL).HasMaxLength(255);
 
         //builder.Property(b => b.PublisherId).IsRequired();
-
-        /*builder.HasMany(b => b.BookAuthors).WithOne(ba => ba.Book)
-            .HasForeignKey(ba => ba.BookId);*/
 
         //builder.HasOne<Publisher>().WithMany().HasForeignKey(b => b.PublisherId);
     }

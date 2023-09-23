@@ -5,16 +5,10 @@ namespace Entities.Models;
 
 public class Publisher
 {
-    [Column("PublisherId")]
-    public Guid Id { get; set; }
-    
-    [Required(ErrorMessage = "Publisher Name is a required field.")]
-    [MaxLength(75, ErrorMessage = "Maximum length for Publisher Name is 75 characters.")]
+    public Guid PublisherId { get; set; }
     public string? Name { get; set; }
-    
-    [MaxLength(60, ErrorMessage = "Maximum length for Publisher Location is 60 characters.")]
     public string? Location { get; set; }
+    public string? ContactInfo { get; set; }
     
-    [MaxLength(100, ErrorMessage = "Maximum length for the Publish Contact Info is 100 characters.")]
-    public string? contactInfo { get; set; }
+    public ICollection<Book> Books { get; set; }
 }

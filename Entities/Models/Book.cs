@@ -5,7 +5,8 @@ namespace Entities.Models;
 
 public class Book
 {
-    public Guid Id { get; set; }
+    public Guid BookId { get; set; }
+    public Guid PublisherId { get; set; }
     public string? BookTitle { get; set; }
     public string? ISBN { get; set; }
     public DateTime PublicationDate { get; set; }
@@ -14,6 +15,7 @@ public class Book
     public int PageCount { get; set; }
     public string? CoverImageURL { get; set; }
 
+    public Publisher Publisher { get; set; } = null!;
     public ICollection<BookAuthor> BookAuthors { get; set; }
     public ICollection<Author> Authors { get; set; }
 }

@@ -8,9 +8,9 @@ public class AuthorTypeConfiguration : IEntityTypeConfiguration<Author>
 {
     public void Configure(EntityTypeBuilder<Author> builder)
     {
-        builder.HasKey(a => a.Id);
+        builder.HasKey(a => a.AuthorId);
 
-        builder.Property(a => a.Id).ValueGeneratedOnAdd();
+        builder.Property(a => a.AuthorId).ValueGeneratedOnAdd();
 
         builder.Property(a => a.Name).IsRequired().HasMaxLength(50);
 
