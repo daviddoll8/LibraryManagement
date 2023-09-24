@@ -23,7 +23,7 @@ public class AuthorTypeConfiguration : IEntityTypeConfiguration<Author>
             .UsingEntity<BookAuthor>();
 
         builder.HasData(
-            new Author()
+            new Author
             {
                 AuthorId = new Guid("0cabada2-7f0c-45bb-8440-c9b3cf8c3972"),
                 Name = "Frank Herbert",

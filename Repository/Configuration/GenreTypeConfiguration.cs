@@ -10,6 +10,8 @@ public class GenreTypeConfiguration : IEntityTypeConfiguration<Genre>
     {
         builder.HasKey(g => g.GenreId);
 
+        builder.Property(g => g.GenreId).ValueGeneratedOnAdd();
+
         builder.Property(g => g.Name).IsRequired().HasMaxLength(40);
 
         builder.HasMany(g => g.Books)
@@ -22,7 +24,7 @@ public class GenreTypeConfiguration : IEntityTypeConfiguration<Genre>
             new Genre
             {
                 GenreId = new Guid("08e95852-2773-4d33-bed7-0383215ab34a"),
-                Name = "Sci-Fi"
+                Name = "Sci-Fi",
             },
             new Genre
             {

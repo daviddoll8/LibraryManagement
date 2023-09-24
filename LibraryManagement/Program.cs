@@ -1,6 +1,8 @@
 using LibraryManagement.Extensions;
 using Microsoft.AspNetCore.HttpOverrides;
 using NLog;
+using Repository;
+using Entities.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

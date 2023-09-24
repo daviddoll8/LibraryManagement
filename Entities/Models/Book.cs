@@ -15,7 +15,7 @@ public class Book
     public int PageCount { get; set; }
     public string? CoverImageURL { get; set; }
 
-    public ICollection<Genre> Genres { get; set; } = new List<Genre>();
+    public ICollection<Genre> Genres { get; set; }
     public Publisher Publisher { get; set; } = null!;
     public ICollection<BookAuthor> BookAuthors { get; set; }
     public ICollection<Author> Authors { get; set; }
