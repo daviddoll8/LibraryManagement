@@ -17,5 +17,36 @@ public class PublisherTypeConfiguration : IEntityTypeConfiguration<Publisher>
         builder.Property(p => p.Location).HasMaxLength(60);
 
         builder.Property(p => p.ContactInfo).HasMaxLength(100);
+
+        builder.HasData(
+            new Publisher
+            {
+                PublisherId = Guid.NewGuid(),
+                Name =  "Penguin Random House",
+                Location = "USA",
+                ContactInfo = "penguinpublishing@gmail.com"
+            },
+            new Publisher
+            {
+                PublisherId = Guid.NewGuid(),
+                Name = "Scholastic",
+                Location = "France",
+                ContactInfo = "contactscholastic@gmail.com"
+            },
+            new Publisher
+            {
+                PublisherId = Guid.NewGuid(),
+                Name = "Pearson",
+                Location = "Germany",
+                ContactInfo = "personpublishing@gmail.com"
+            },
+            new Publisher
+            {
+                PublisherId = Guid.NewGuid(),
+                Name = "Houghton Mifflin",
+                Location = null,
+                ContactInfo = null
+            }
+        );
     }
 }

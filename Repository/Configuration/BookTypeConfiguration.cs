@@ -18,7 +18,7 @@ public class BookTypeConfiguration : IEntityTypeConfiguration<Book>
 
         builder.Property(b => b.PublicationDate).IsRequired();
 
-        builder.Property(b => b.Description).HasMaxLength(750);
+        builder.Property(b => b.Description).HasMaxLength(1000);
 
         builder.Property(b => b.Availability).IsRequired();
 
@@ -27,9 +27,5 @@ public class BookTypeConfiguration : IEntityTypeConfiguration<Book>
         builder.Property(b => b.CoverImageURL);
 
         builder.Property(b => b.CoverImageURL).HasMaxLength(255);
-
-        //builder.Property(b => b.PublisherId).IsRequired();
-
-        //builder.HasOne<Publisher>().WithMany().HasForeignKey(b => b.PublisherId);
     }
 }
