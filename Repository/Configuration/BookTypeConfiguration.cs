@@ -31,7 +31,7 @@ public class BookTypeConfiguration : IEntityTypeConfiguration<Book>
         builder.HasData(
             new Book
             {
-                BookId = Guid.NewGuid(),
+                BookId = new Guid("3c51ad1c-66e6-4daa-a20e-5c2e72c59802"),
                 BookTitle = "Dune",
                 ISBN = "9780233660615",
                 PublicationDate = new DateTime(1990, 9, 15),
@@ -48,7 +48,7 @@ public class BookTypeConfiguration : IEntityTypeConfiguration<Book>
             },
             new Book
             {
-                BookId = Guid.NewGuid(),
+                BookId = new Guid("6e8b727f-ecde-4876-916d-e81f12dfa3be"),
                 BookTitle = "Dune",
                 ISBN = "9780233660615",
                 PublicationDate = new DateTime(1990, 9, 15),
@@ -65,7 +65,7 @@ public class BookTypeConfiguration : IEntityTypeConfiguration<Book>
             },
             new Book
             {
-                BookId = Guid.NewGuid(),
+                BookId = new Guid("a2bb0fd5-5d9b-4b11-a3a3-4948b2f1a5c5"),
                 BookTitle = "The Catcher in the Rye",
                 ISBN = "9787360328388",
                 PublicationDate = new DateTime(1980, 4, 6),
@@ -77,7 +77,7 @@ public class BookTypeConfiguration : IEntityTypeConfiguration<Book>
             },
             new Book
             {
-                BookId = Guid.NewGuid(),
+                BookId = new Guid("c79f76c0-8409-4d73-a830-9ece06fb078d"),
                 BookTitle = "The Catcher in the Rye",
                 ISBN = "9787360328388",
                 PublicationDate = new DateTime(1980, 4, 6),
@@ -89,7 +89,7 @@ public class BookTypeConfiguration : IEntityTypeConfiguration<Book>
             },
             new Book
             {
-                BookId = Guid.NewGuid(),
+                BookId = new Guid("a499294c-5f69-404f-91b7-c85db7f0a330"),
                 BookTitle = "The Catcher in the Rye",
                 ISBN = "9787360328388",
                 PublicationDate = new DateTime(1980, 4, 6),
@@ -101,7 +101,7 @@ public class BookTypeConfiguration : IEntityTypeConfiguration<Book>
             },
             new Book
             {
-                BookId = Guid.NewGuid(),
+                BookId = new Guid("9a2aa24e-19d4-4cbe-bf90-96d625d012e0"),
                 BookTitle = "Sample SciFi",
                 ISBN = "9780277097484",
                 PublicationDate = new DateTime(1994, 11, 8),
@@ -113,7 +113,7 @@ public class BookTypeConfiguration : IEntityTypeConfiguration<Book>
             },
             new Book
             {
-                BookId = Guid.NewGuid(),
+                BookId = new Guid("33d274bd-2d9d-472a-b595-4ff4d0bf8c87"),
                 BookTitle = "Sample Horror",
                 ISBN = "9781677732098",
                 PublicationDate = new DateTime(2010, 12, 15),
@@ -125,7 +125,7 @@ public class BookTypeConfiguration : IEntityTypeConfiguration<Book>
             },
             new Book
             {
-                BookId = Guid.NewGuid(),
+                BookId = new Guid("1be983b8-34cc-41bf-aad0-ff83113c1ca6"),
                 BookTitle = "Sample ScienceHistory",
                 ISBN = "9783981372724",
                 PublicationDate = new DateTime(2004, 5, 23),
