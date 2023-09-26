@@ -1,6 +1,6 @@
 ﻿using Contracts;
-using Entities.Models;
 using Service.Contracts;
+using Shared.DataTransferObjects;
 
 namespace Service;
 
@@ -15,17 +15,21 @@ internal sealed class BookService : IBookService
         _logger = logger;
     }
 
-    public IEnumerable<Book> GetAllBooks(bool trackChanges)
+    public IEnumerable<BookDto> GetAllBooks(bool trackChanges)
     {
         try
         {
             var books = _repository.Book.GetAllBooks(trackChanges);
 
-            return books;
+            var booksDto = books.Select(b => new BookDto(b.BookId, b.BookTitle,
+                b.PublisherId, b.ISBN, b.PublicationDate, b.Description ?? "", b.Availability,
+                b.PageCount)).ToList();
+
+            return booksDto;
         }
         catch (Exception ex)
         {
-            _logger.LogError($"Something went wrong in the {nameof(GetAllBooks)} service method");
+            _logger.LogError($"Something went wrong in the {nameof(GetAllBooks)} service method {ex}");
             throw;
         }
     }

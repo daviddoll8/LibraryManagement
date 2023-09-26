@@ -1,8 +1,8 @@
-﻿using Entities.Models;
+﻿using Shared.DataTransferObjects;
 
 namespace Service.Contracts;
 
 public interface IBookService
 {
-    IEnumerable<Book> GetAllBooks(bool trackChanges);
+    IEnumerable<BookDto> GetAllBooks(bool trackChanges);
 }
