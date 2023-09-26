@@ -10,4 +10,7 @@ public class BookRepository : RepositoryBase<Book>, IBookRepository
     {
         
     }
+
+    public IEnumerable<Book> GetAllBooks(bool trackChanges) =>
+        FindAll(trackChanges).OrderBy(b => b.BookTitle).ToList();
 }
