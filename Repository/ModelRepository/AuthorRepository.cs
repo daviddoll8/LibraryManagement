@@ -10,4 +10,7 @@ public class AuthorRepository : RepositoryBase<Author>, IAuthorRepository
     {
         
     }
+
+    public IEnumerable<Author> GetAllAuthors(bool trackChanges) =>
+        FindAll(trackChanges).OrderBy(a => a.Name).ToList();
 }

@@ -15,7 +15,7 @@ public sealed class ServiceManager : IServiceManager
     {
         _bookService = new Lazy<IBookService>(() => new BookService(repositoryManager, logger, mapper));
         _publisherService = new Lazy<IPublisherService>(() => new PublisherService(repositoryManager, logger));
-        _authorService = new Lazy<IAuthorService>(() => new AuthorService(repositoryManager, logger));
+        _authorService = new Lazy<IAuthorService>(() => new AuthorService(repositoryManager, logger, mapper));
         _genreService = new Lazy<IGenreService>(() => new GenreService(repositoryManager, logger));
     }
 
