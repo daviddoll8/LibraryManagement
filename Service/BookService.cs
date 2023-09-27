@@ -1,4 +1,5 @@
-﻿using Contracts;
+﻿using AutoMapper;
+using Contracts;
 using Service.Contracts;
 using Shared.DataTransferObjects;
 
@@ -8,11 +9,13 @@ internal sealed class BookService : IBookService
 {
     private readonly IRepositoryManager _repository;
     private readonly ILoggerManager _logger;
+    private readonly IMapper _mapper;
 
-    public BookService(IRepositoryManager repository, ILoggerManager logger)
+    public BookService(IRepositoryManager repository, ILoggerManager logger, IMapper mapper)
     {
         _repository = repository;
         _logger = logger;
+        _mapper = mapper;
     }
 
     public IEnumerable<BookDto> GetAllBooks(bool trackChanges)
@@ -20,11 +23,7 @@ internal sealed class BookService : IBookService
         try
         {
             var books = _repository.Book.GetAllBooks(trackChanges);
-
-            var booksDto = books.Select(b => new BookDto(b.BookId, b.BookTitle,
-                b.PublisherId, b.ISBN, b.PublicationDate, b.Description ?? "", b.Availability,
-                b.PageCount)).ToList();
-
+            var booksDto = _mapper.Map<IEnumerable<BookDto>>(books);
             return booksDto;
         }
         catch (Exception ex)
