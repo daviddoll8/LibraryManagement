@@ -14,15 +14,8 @@ public class AuthorsController : ControllerBase
     [HttpGet]
     public IActionResult GetAuthors()
     {
-        try
-        {
             var books = _service.AuthorService.GetAllAuthors(trackChanges: false);
 
             return Ok(books);
-        }
-        catch
-        {
-            return StatusCode(500, "Internal server error.");
-        }
     }
 }

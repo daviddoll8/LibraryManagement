@@ -14,15 +14,8 @@ public class BooksController : ControllerBase
     [HttpGet]
     public IActionResult GetBooks()
     {
-        try
-        {
             var books = _service.BookService.GetAllBooks(trackChanges: false);
 
             return Ok(books);
-        }
-        catch
-        {
-            return StatusCode(500, "Internal server error");
-        }
     }
 }

@@ -20,16 +20,9 @@ internal sealed class BookService : IBookService
 
     public IEnumerable<BookDto> GetAllBooks(bool trackChanges)
     {
-        try
-        {
-            var books = _repository.Book.GetAllBooks(trackChanges);
-            var booksDto = _mapper.Map<IEnumerable<BookDto>>(books);
-            return booksDto;
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError($"Something went wrong in the {nameof(GetAllBooks)} service method {ex}");
-            throw;
-        }
+        var books = _repository.Book.GetAllBooks(trackChanges);
+        var booksDto = _mapper.Map<IEnumerable<BookDto>>(books);
+        
+        return booksDto;
     }
 }
